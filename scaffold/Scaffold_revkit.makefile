@@ -52,11 +52,11 @@ qasm: $(FILE).qasmh
 $(FILE)_merged.scaffold: $(FILENAME)
 	@if [ $(Revkit) -eq 1 ]; then \
 		echo "[Scaffold.makefile] Extracting Revkit from Scaffold ..."; \
-		$(PERL) $(ROOT)/revkit/trans/pre_process_revkit.pl $(FILENAME); \
+		$(PERL) $(ROOT)/rkqc/trans/pre_process_revkit.pl $(FILENAME); \
 		echo "[Scaffold.makefile] Compiling Revkit ..."; \
-		$(ROOT)/revkit/revkit $(CFILE).cpp; \
+		$(ROOT)/rkqc/rkqc $(CFILE).cpp; \
 		echo "[Scaffold.makefile] Merging Revkit output back into Scaffold ..."; \
-		$(PERL) $(ROOT)/revkit/trans/merge_revkit.pl $(CFILE).qasm; \
+		$(PERL) $(ROOT)/rkqc/trans/merge_revkit.pl $(CFILE).qasm; \
 	else \
 		cp $(FILENAME) $(FILE)_merged.scaffold; \
 	fi
