@@ -1,3 +1,6 @@
 #!/bin/bash
 
-revkit/build.sh && make
+cd rkqc/
+./build.sh
+cd ../
+make
