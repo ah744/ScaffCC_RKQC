@@ -313,7 +313,7 @@ revkit encrypt( qbit in, qbit ha ){
     finalHash( hash, h0, h1, h2, h3, h4);
 }   
 
-revkit main( int argc, char** argv ){
+int main( int argc, char** argv ){
     qbit x(448);
     qbit hash(160);
     encrypt(x, hash);
